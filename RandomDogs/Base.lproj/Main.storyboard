@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="6ke-fP-6qb">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Home View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="HomeViewController" customModule="RandomDogs" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Random Dog Generator!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pnb-Kk-Xhk">
+                                <rect key="frame" x="114" y="188" width="186" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="akc-s1-Hhk">
+                                <rect key="frame" x="67" y="358.5" width="280" height="100"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kH0-bT-7he">
+                                        <rect key="frame" x="65" y="0.0" width="150" height="40"/>
+                                        <color key="backgroundColor" red="0.25882352939999997" green="0.52549019610000003" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="150" id="or7-6c-pe8"/>
+                                            <constraint firstAttribute="height" constant="40" id="pVh-vj-mvh"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                        <state key="normal" title="Generate Dogs!">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="20"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="generateDogs:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Xdf-hK-fiW"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zdq-76-Pc1">
+                                        <rect key="frame" x="10" y="60" width="260" height="40"/>
+                                        <color key="backgroundColor" red="0.25882352939999997" green="0.52549019610000003" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="ciW-3s-48Y"/>
+                                            <constraint firstAttribute="width" constant="260" id="nMj-so-gGb"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                        <state key="normal" title="My Recently Generated Dogs!">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="20"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="moveToRecentDogs:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pJG-dP-Gyc"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="zdq-76-Pc1" firstAttribute="centerX" secondItem="akc-s1-Hhk" secondAttribute="centerX" id="ASW-0Q-QJb"/>
+                                    <constraint firstItem="kH0-bT-7he" firstAttribute="centerX" secondItem="akc-s1-Hhk" secondAttribute="centerX" id="Pko-q7-zab"/>
+                                    <constraint firstAttribute="width" constant="280" id="aqR-Eh-pug"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="akc-s1-Hhk" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="MoS-6C-PMO"/>
+                            <constraint firstItem="Pnb-Kk-Xhk" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="e7o-E7-QBH"/>
+                            <constraint firstItem="Pnb-Kk-Xhk" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="100" id="pVc-Bq-XP1"/>
+                            <constraint firstItem="akc-s1-Hhk" firstAttribute="top" secondItem="Pnb-Kk-Xhk" secondAttribute="bottom" constant="150" id="xRD-BF-OJl"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="HTt-3N-bVH"/>
+                    <connections>
+                        <segue destination="AOg-fH-jxg" kind="show" identifier="generateDogsSegue" id="hIV-x6-bwi"/>
+                        <segue destination="M1o-2S-kKg" kind="show" identifier="recentDogsSegue" id="b2n-YX-I2K"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1047.8260869565217" y="129.91071428571428"/>
+        </scene>
+        <!--My Recently Generated Dogs!-->
+        <scene sceneID="ZOK-Vq-0cj">
+            <objects>
+                <viewController id="M1o-2S-kKg" customClass="RecentDogsViewController" customModule="RandomDogs" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="TK4-wf-zPQ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="gnz-vS-bXo">
+                                <rect key="frame" x="0.0" y="168" width="414" height="300"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="3ja-TC-w8Y"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="1d1-3K-Xzl">
+                                    <size key="itemSize" width="397" height="190"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="dogCell" id="m9v-Ad-fS9" customClass="RecentDogsCollectionViewCell" customModule="RandomDogs" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="55" width="397" height="190"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="qTS-lH-tBp">
+                                            <rect key="frame" x="0.0" y="0.0" width="397" height="190"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="MYU-dO-XdG">
+                                                    <rect key="frame" x="0.0" y="0.0" width="397" height="190"/>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="MYU-dO-XdG" secondAttribute="bottom" id="Jy4-e4-2jP"/>
+                                                <constraint firstItem="MYU-dO-XdG" firstAttribute="leading" secondItem="qTS-lH-tBp" secondAttribute="leading" id="KRN-3Q-5Mp"/>
+                                                <constraint firstItem="MYU-dO-XdG" firstAttribute="top" secondItem="qTS-lH-tBp" secondAttribute="top" id="TJj-ck-Rpv"/>
+                                                <constraint firstAttribute="trailing" secondItem="MYU-dO-XdG" secondAttribute="trailing" id="y0n-Ev-uGF"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                        <size key="customSize" width="397" height="190"/>
+                                        <connections>
+                                            <outlet property="dogImageView" destination="MYU-dO-XdG" id="a9L-oC-oCU"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="M1o-2S-kKg" id="VNQ-89-Oh3"/>
+                                    <outlet property="delegate" destination="M1o-2S-kKg" id="tFL-Dd-yRF"/>
+                                </connections>
+                            </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sXU-j6-rNM">
+                                <rect key="frame" x="132" y="508" width="150" height="40"/>
+                                <color key="backgroundColor" red="0.25882352941176467" green="0.52549019607843139" blue="0.95686274509803915" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="0Je-e5-g70"/>
+                                    <constraint firstAttribute="height" constant="40" id="Cuw-6l-X4h"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                <state key="normal" title="Clear Dogs!">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="clearDogs:" destination="M1o-2S-kKg" eventType="touchUpInside" id="hbF-oh-StG"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="gnz-vS-bXo" firstAttribute="centerX" secondItem="TK4-wf-zPQ" secondAttribute="centerX" id="47e-Ag-EyQ"/>
+                            <constraint firstItem="sXU-j6-rNM" firstAttribute="centerX" secondItem="TK4-wf-zPQ" secondAttribute="centerX" id="C8O-xn-nPJ"/>
+                            <constraint firstItem="gnz-vS-bXo" firstAttribute="width" secondItem="TK4-wf-zPQ" secondAttribute="width" id="VD0-by-CfR"/>
+                            <constraint firstItem="sXU-j6-rNM" firstAttribute="top" secondItem="gnz-vS-bXo" secondAttribute="bottom" constant="40" id="laO-1c-IEC"/>
+                            <constraint firstItem="gnz-vS-bXo" firstAttribute="top" secondItem="kvy-o6-64f" secondAttribute="top" constant="80" id="p61-BG-GJe"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="kvy-o6-64f"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="My Recently Generated Dogs!" id="yFl-Rr-2yZ"/>
+                    <connections>
+                        <outlet property="recentDogsCollectionView" destination="gnz-vS-bXo" id="g13-Ht-m3m"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="egD-oG-K4h" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1779.7101449275365" y="389.73214285714283"/>
+        </scene>
+        <!--Generate Dogs!-->
+        <scene sceneID="rSe-cV-EtZ">
+            <objects>
+                <viewController id="AOg-fH-jxg" customClass="GenerateDogsViewController" customModule="RandomDogs" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bdE-P3-zLh">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="s9k-ve-7tc">
+                                <rect key="frame" x="20" y="138" width="374" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="dwu-Qg-hig"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GIi-EH-WON">
+                                <rect key="frame" x="137" y="378" width="140" height="40"/>
+                                <color key="backgroundColor" red="0.25882352939999997" green="0.52549019610000003" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="140" id="ejb-KT-GlR"/>
+                                    <constraint firstAttribute="height" constant="40" id="p2K-CM-2mO"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                <state key="normal" title="Generate!">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="generateDog:" destination="AOg-fH-jxg" eventType="touchUpInside" id="4eM-uw-cQZ"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="s9k-ve-7tc" firstAttribute="width" secondItem="bdE-P3-zLh" secondAttribute="width" multiplier="0.9" constant="1" id="2ad-gJ-yev"/>
+                            <constraint firstItem="s9k-ve-7tc" firstAttribute="top" secondItem="ywO-CM-o8q" secondAttribute="top" constant="50" id="5qE-fp-y4d"/>
+                            <constraint firstItem="s9k-ve-7tc" firstAttribute="centerX" secondItem="bdE-P3-zLh" secondAttribute="centerX" id="Nmo-Kq-dvd"/>
+                            <constraint firstItem="GIi-EH-WON" firstAttribute="centerX" secondItem="bdE-P3-zLh" secondAttribute="centerX" id="Vek-ZQ-Xbz"/>
+                            <constraint firstItem="ywO-CM-o8q" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="GIi-EH-WON" secondAttribute="bottom" id="nqt-Vx-vA1"/>
+                            <constraint firstItem="GIi-EH-WON" firstAttribute="top" secondItem="s9k-ve-7tc" secondAttribute="bottom" constant="40" id="oXY-xd-fau"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ywO-CM-o8q"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Generate Dogs!" id="Bew-jY-tYM"/>
+                    <connections>
+                        <outlet property="dogImageView" destination="s9k-ve-7tc" id="Mbl-6p-AO5"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OXk-M1-ivX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1768.1159420289857" y="-393.08035714285711"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="fwA-WW-hqR">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="6ke-fP-6qb" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="eNH-R5-8BE">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="gEy-RT-tdh"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="APY-IO-W0x" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="129.91071428571428"/>
+        </scene>
+    </scenes>
+</document>
